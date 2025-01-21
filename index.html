@@ -1,0 +1,373 @@
+﻿<!doctype html>
+<html lang=en>
+<head>
+ <meta charset=utf-8>
+ <title> Hover Us </title>
+
+ <!-- Thanks to realfavicongenerator.net -->
+<link rel=apple-touch-icon sizes=180x180 href=apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png>
+<link rel=mask-icon href=safari-pinned-tab.svg color=#dd0000>
+<meta name=apple-mobile-web-app-title content="Hover Us">
+<meta name=application-name content="Hover Us">
+<meta name=msapplication-TileColor content=#9f33d7>
+<meta name=author content="Carl Cook">
+<meta name=keywords content="Hoverboard surf skate board hovercraft ACV powered leaf blower">
+<meta name=description content="The Hoverboard that floats on air.">
+<meta property=og:image:height content=1190>
+<meta property=og:image:width content=2274>
+<meta property=og:title content="Hover Us">
+<meta property=og:description content="The Hoverboard that floats on air.">
+<meta property=og:url content=https://hover.us/>
+<meta property=og:image content=https://hover.us/img/hoverboard.jpg>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<style>body{color:#111;background:#f8f8f8;height:100%;margin:0}html,*{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Helvetica,sans-serif;line-height:1.3}.hoverPad{padding:.125rem .25rem;padding:calc(0.25em + 0.1vw) calc(1em + 0.3vw)}button,a.button{display:inline-block;background:#000;color:#eee;border-radius:.25rem;text-decoration:none;cursor:pointer}header .button{box-sizing:border-box;position:relative;margin:.1rem .4rem;margin:.3vw .6vw;flex:1;background:rgba(0,0,0,0.9);font-size:calc(1em + 0.2vw)}.c1{background:#f8f8f8;color:#111;border:.0625rem solid #bbb;padding:.25rem;border-radius:.125rem}@media screen and (min-width:50em){.c1{flex:1 1;align-self:stretch;box-sizing:border-box;padding:.5rem;border-radius:.25rem;font-size:calc(1em + 0.2vw)}}.p1{padding:.2rem .4rem;padding:calc(0.125em + 0.1vw) calc(0.25em + 0.2vw);margin:calc(0.3em + 0.1vw) calc(0.5em + 0.4vw)}.p1::first-letter {font-size:1.3em;text-shadow:.03em .07em .02em #d00}.f0::first-letter {font-size:1.3em;text-shadow:.03em .07em .02em #d00}.f1,.f2,.f3{display:flex;flex-direction:column}@media screen and (min-width:42em){.f1{flex-direction:row;flex:1}}@media screen and (min-width:90em){.f2{flex-direction:row;flex:1}}.f3{text-align:center;justify-content:space-around}.menuContent{display:flex;flex-flow:row wrap;border:.0625rem solid #a00;border-radius:.25rem;margin:.5em}.cHeading{flex:0 0 100%;text-align:center;font-weight:normal;font-size:calc(1.8em + 0.6vw);margin:calc(0.3em + 0.3vw) 0}#top{position:relative}#bgimg{height:33em;object-fit:cover;overflow:hidden;width:100%;vertical-align:bottom}.fontK{font-family:'Kalam',cursive}header .butx{position:absolute;left:0;width:100%;color:red;overflow:hidden;text-shadow:2px 2px 4px rgba(255,0,0,0.5),-5px -1px 8px rgba(255,0,0,0.5),-3px 2px 4px rgba(255,40,40,0.5),4px -2px 6px rgba(255,80,80,0.5)}.social a{position:absolute;box-sizing:border-box;width:25%;height:100%;z-index:2;border-radius:20%;top:0}.social a:hover{border:outset #d00 calc(0.12em + 0.15vw);background:rgba(255,255,255,0.3);background:linear-gradient(330deg,rgba(255,255,255,0.25) 70%,#f00 97%)}.t,.u{margin:auto}.t a{text-decoration:none;border-radius:.5em;padding:.25vh 1vw;margin:0 1vw;border:2px solid #ccc}.u a{text-decoration:none;border-radius:.3em;border:2px solid #ccc}.v:disabled{pointer-events:none;background-color:#777}.t a:hover,.u a:hover,.v:hover:enabled{border:2px outset #f00;color:#f00;text-shadow:2px 2px 4px rgba(255,0,0,0.5),-5px -1px 8px rgba(255,0,0,0.5),-3px 2px 4px rgba(255,40,40,0.5),4px -2px 6px rgba(255,80,80,0.5);background:#30f}</style>
+
+<script async defer src="js/hover.min.js?v=1.1"></script>
+<script async defer src=https://www.google.com/recaptcha/api.js></script>
+<script type="module">
+    export class LiteYTEmbed extends HTMLElement {
+    constructor() {
+        super();
+        this.isIframeLoaded = false;
+        this.setupDom();
+    }
+    static get observedAttributes() {
+        return ['videoid'];
+    }
+    connectedCallback() {
+        this.addEventListener('pointerover', LiteYTEmbed.warmConnections, {
+            once: true,
+        });
+        this.addEventListener('click', () => this.addIframe());
+    }
+    get videoId() {
+        return encodeURIComponent(this.getAttribute('videoid') || '');
+    }
+    set videoId(id) {
+        this.setAttribute('videoid', id);
+    }
+    get videoTitle() {
+        return this.getAttribute('videotitle') || 'Video';
+    }
+    set videoTitle(title) {
+        this.setAttribute('videotitle', title);
+    }
+    get videoPlay() {
+        return this.getAttribute('videoPlay') || 'Play';
+    }
+    set videoPlay(name) {
+        this.setAttribute('videoPlay', name);
+    }
+
+    get autoLoad() {
+        return this.hasAttribute('autoload');
+    }
+
+    get posterQuality() {
+        return this.getAttribute('posterquality') || 'default';
+    }
+    get posterLoading() {
+        return (this.getAttribute('posterloading') ||
+            'lazy');
+    }
+    get params() {
+        return `${this.getAttribute('params')}`;
+    }
+    set params(opts) {
+        this.setAttribute('params', opts);
+    }
+    setupDom() {
+        const shadowDom = this.attachShadow({ mode: 'open' });
+        shadowDom.innerHTML = `
+      <style>
+        :host {
+          contain: content;
+          display: block;
+          position: relative;
+          width: 100%;
+          padding-bottom: calc(100% / (16 / 9));
+          --lyt-animation: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+          --lyt-play-btn-default: #212121;
+          --lyt-play-btn-hover: #f00;
+        }
+
+        @media (max-width: 40em) {
+          :host([short]) {
+            padding-bottom: calc(100% / (9 / 16));
+          }
+        }
+
+        #frame, #fallbackPlaceholder, iframe {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+        }
+
+        #frame {
+          cursor: pointer;
+        }
+
+        #fallbackPlaceholder {
+          object-fit: cover;
+        }
+
+        #frame::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          background-image: linear-gradient(180deg, #111 -20%, transparent 90%);
+          height: 60px;
+          width: 100%;
+          transition: var(--lyt-animation);
+          z-index: 1;
+        }
+
+        #playButton {
+          width: 70px;
+          height: 46px;
+          background-color: var(--lyt-play-btn-hover);
+          z-index: 1;
+          opacity: 0.8;
+          border-radius: 14%;
+          transition: var(--lyt-animation);
+          border: 0;
+        }
+
+        #frame:hover > #playButton {
+          background-color: var(--lyt-play-btn-hover);
+          opacity: 1;
+        }
+
+        #playButton:before {
+          content: '';
+          border-style: solid;
+          border-width: 11px 0 11px 19px;
+          border-color: transparent transparent transparent #fff;
+        }
+
+        #playButton,
+        #playButton:before {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate3d(-50%, -50%, 0);
+          cursor: inherit;
+        }
+
+        /* Post-click styles */
+        .activated {
+          cursor: unset;
+        }
+
+        #frame.activated::before,
+        #frame.activated > #playButton {
+          display: none;
+        }
+      </style>
+      <div id="frame">
+        <picture>
+          <source id="jpegPlaceholder" type="image/jpeg">
+          <img id="fallbackPlaceholder" referrerpolicy="origin" loading="lazy">
+        </picture>
+        <button id="playButton"></button>
+      </div>
+    `;
+        this.domRefFrame = shadowDom.querySelector('#frame');
+        this.domRefImg = {
+            fallback: shadowDom.querySelector('#fallbackPlaceholder'),
+        //    webp: shadowDom.querySelector('#webpPlaceholder'),
+            jpeg: shadowDom.querySelector('#jpegPlaceholder'),
+        };
+        this.domRefPlayButton = shadowDom.querySelector('#playButton');
+    }
+    setupComponent() {
+        this.initImagePlaceholder();
+        this.domRefPlayButton.setAttribute('aria-label', `${this.videoPlay}: ${this.videoTitle}`);
+        this.setAttribute('title', `${this.videoPlay}: ${this.videoTitle}`);
+        if (this.autoLoad || this.isYouTubeShort()) {
+            this.initIntersectionObserver();
+        }
+    }
+    attributeChangedCallback(name, oldVal, newVal) {
+        switch (name) {
+            case 'videoid':
+            case 'videoTitle':
+            case 'videoPlay': {
+                if (oldVal !== newVal) {
+                    this.setupComponent();
+                    if (this.domRefFrame.classList.contains('activated')) {
+                        this.domRefFrame.classList.remove('activated');
+                        this.shadowRoot.querySelector('iframe').remove();
+                        this.isIframeLoaded = false;
+                    }
+                }
+                break;
+            }
+            default:
+                break;
+        }
+    }
+    addIframe(isIntersectionObserver = false) {
+        if (!this.isIframeLoaded) {
+            let embedTarget;
+            embedTarget = `${this.videoId}?`;
+
+            const iframeHTML = `
+<iframe frameborder="0"
+  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+  src="https://www.youtube.com/embed/${embedTarget}${this.params}"
+></iframe>`;
+            this.domRefFrame.insertAdjacentHTML('beforeend', iframeHTML);
+            this.domRefFrame.classList.add('activated');
+            this.isIframeLoaded = true;
+             this.dispatchEvent(new CustomEvent('liteYoutubeIframeLoaded', {
+                detail: {
+                    videoId: this.videoId,
+                },
+                bubbles: true,
+                cancelable: true,
+            }));
+        }
+    }
+    initImagePlaceholder() {
+        LiteYTEmbed.addPrefetch('preconnect', 'https://i.ytimg.com/');
+     //   const posterUrlWebp = `https://i.ytimg.com/vi_webp/${this.videoId}/${this.posterQuality}.webp`;
+        const posterUrlJpeg = `https://i.ytimg.com/vi/${this.videoId}/${this.posterQuality}.jpg`;
+        this.domRefImg.fallback.loading = this.posterLoading;
+     //   this.domRefImg.webp.srcset = posterUrlWebp;
+        this.domRefImg.jpeg.srcset = posterUrlJpeg;
+        this.domRefImg.fallback.src = posterUrlJpeg;
+        this.domRefImg.fallback.setAttribute('aria-label', `${this.videoPlay}: ${this.videoTitle}`);
+        this.domRefImg?.fallback?.setAttribute('alt', `${this.videoPlay}: ${this.videoTitle}`);
+    }
+    initIntersectionObserver() {
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0,
+        };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !this.isIframeLoaded) {
+                    this.addIframe(true);
+                    LiteYTEmbed.warmConnections();
+                    observer.unobserve(this);
+                }
+            });
+        }, options);
+        observer.observe(this);
+    }
+
+    static addPrefetch(kind, url) {
+        const linkElem = document.createElement('link');
+        linkElem.rel = kind;
+        linkElem.href = url;
+        linkElem.crossOrigin = 'true';
+        document.head.append(linkElem);
+    }
+    static warmConnections() {
+        if (LiteYTEmbed.isPreconnected)
+            return;
+        LiteYTEmbed.addPrefetch('preconnect', 'https://s.ytimg.com');
+        LiteYTEmbed.addPrefetch('preconnect', 'https://www.youtube.com');
+        LiteYTEmbed.addPrefetch('preconnect', 'https://www.google.com');
+        LiteYTEmbed.addPrefetch('preconnect', 'https://googleads.g.doubleclick.net');
+        LiteYTEmbed.addPrefetch('preconnect', 'https://static.doubleclick.net');
+        LiteYTEmbed.isPreconnected = true;
+    }
+}
+LiteYTEmbed.isPreconnected = false;
+customElements.define('lite-youtube', LiteYTEmbed);
+//# sourceMappingURL=lite-youtube.js.map
+</script>
+</head>
+<body>
+<header style=position:fixed;top:0;left:0;right:0;z-index:1101;background:#000;color:#eee;white-space:nowrap;overflow-x:auto;overflow-y:hidden;text-align:center;display:flex;justify-content:space-around class=header>
+<a href=#top onclick="sim=1;scrollIt(event);return false" onmouseover="this.style.backgroundColor='#00f'" onmouseout="if(!sim)this.style.backgroundColor=''" class=button>TOP<span class=butx>TOP</span></a>
+<a href=#kick onclick="sim=1;scrollIt(event);return false" onmouseover="this.style.backgroundColor='#00f'" onmouseout="if(!sim)this.style.backgroundColor=''" class=button>COMING SOON<span class=butx>COMING SOON</span></a>
+<a href=#history onclick="sim=1;scrollIt(event);return false" onmouseover="this.style.backgroundColor='#00f'" onmouseout="if(!sim)this.style.backgroundColor=''" class=button>HISTORY<span class=butx>HISTORY</span></a>
+<a href=#faq onclick="sim=1;scrollIt(event);return false" onmouseover="this.style.backgroundColor='#00f'" onmouseout="if(!sim)this.style.backgroundColor=''" class=button>FAQ<span class=butx>FAQ</span></a>
+<a href=#contact onclick="sim=1;scrollIt(event);return false" onmouseover="this.style.backgroundColor='#00f'" onmouseout="if(!sim)this.style.backgroundColor=''" class=button>CONTACT<span class=butx>CONTACT</span></a>
+<div id=show_sldr style=position:absolute;height:100%;z-index:-1;background-color:#e02;top:0></div>
+</header>
+<div id=bodyTouch>
+<div id=top>
+<picture>
+<source media="(min-width: 1800px)" srcset=img/hoverboard2016.jpg>
+<source media="(min-width: 1008px)" srcset="img/hoverboard1008.jpg, img/hoverboard2016.jpg 2x">
+<source media="(min-width: 504px)" srcset="img/hoverboard504.jpg, img/hoverboard1008.jpg 2x">
+<img id=bgimg src=img/hoverboard504.jpg srcset="img/hoverboard1008.jpg 2x" alt="The Hoverboard that floats on air">
+</picture>
+<div style="position:absolute;top:50%;left:0;right:0;transform:translate(0,-50%);color:white;text-align:center;font-size:4.5em;font-size:calc(2em + 5vw);font-family:'Kalam',cursive">Finally! A Hoverboard<br>that Floats on Air!</div>
+</div>
+<div class=menuContent id=kick>
+<h1 class="cHeading fontK">Full Stack ASP.NET Developer Needs a Job</h1>
+<div class="c1 f1">
+<p class=p1>I am no longer planning on building Hoverboards for sale. I am looking for my future employer, and need to explain this website. I fully support OOP, SOLID principles, automated testing and build process, and other things that this site does not use. I really like to use the best tool for the job, and for a small site like this with only me, that is what I did.</p>
+<p class=p1>Yes it would be expensive, comparable to what <a href=https://www.kickstarter.com/projects/142464853/hendo-hoverboards-worlds-first-real-hoverboard target=_blank>Hendo hoverboards</a> went for. A Hover Us board does not need any special ramp or surface. Ride it on the street, sidewalk, dirt trail... the surface needs to support the weight (not so much on water) and be somewhat airtight. We will offer a detailed how-to build guide with the complete design and instructions from years of building experience.</p>
+ <p class=p1>Country of Origin should be stated by manufactures and retailers. Hello Amazon, are you listening? Although one country produces almost all battery powered leaf blowers, I am not going to support that government's bullying. Everybody deserves to be FREE from oppressive government control. Hover Us will proudly feature American and globally sourced parts from countries without <a target=_blank href=https://en.wikipedia.org/wiki/Arms_embargo#List_of_current_arms_embargoes>arms enbargoes</a>.</p>
+</div></div>
+<div class=menuContent id=history>
+<h1 class="cHeading fontK">History</h1>
+<div class=c1>
+<div style=width:280px;height:158px;float:right>
+    <lite-youtube videotitle="How to Make a Simple Hoverboard" videoid="DFB-ABJq8P0"></lite-youtube>
+</div>
+<p class=p1>It started March 5<sup>th</sup> 2014 when I saw the <a href=https://www.facebook.com/huvrtech target=_blank>HUVr Tech</a> Hoax and thought, <span style="font-family:'Kalam',cursive;font-size:1.2em">Why not?</span></p>
+<p class=p1>There are many how-to leaf blower hovercraft videos like this from 2010:</p>
+<p class=p1>I watched and researched but couldn't find what I wanted. Several designs have come up since then, like Hendo (Magnetic Field Architecture<sup>TM</sup>) and Lexus (liquid nitrogen cooled superconductors), but nothing like Hover Us.</p>
+<p class=p1>I started with an oval board shape and began many years of experimenting, designing, building, and testing. </p>
+<p class=p1>Finding Seam Grip has allowed me great design flexibility, it works wonders.</p>
+<p class=p1>An image of the hand drawn skirt profile (used for layout measures), <i>might</i> be a NFT auctioning on OpenSea.</p></div>
+<div class="c1 f2">
+<p class=p1 style=flex:1>How much weight can it lift? If CFM was the important blower measure, something like the Lasko Wind Machine with 4750 CFM would be awesome. But more pressure is needed. The force on a surface, the ground area under the skirt, is easy to determine with the area and pressure. The pressure of your blower can be measured with a manometer, which is easy to make. You can sort of calculate air pressure with the published speed rating and Bernoulli&#39;s equation. I have been developing corporate websites (full-stack ASP.NET) but <s>last year</s> (OMG it's been too long) I decided to focus on Hover Us. Special thanks to someone for her incredible support through this time.</p>
+<p class=p1 style=flex:1;display:inline-block>
+<img src=img/hover.plate.gif width=240px height=123px style=float:left;padding-right:1em alt="CA license plate HOVER US" />
+The design has seen many revisions and went from a bag skirt, to wall skirt, to bag and finger, but the current version is crazy. There will be more details, hopefully sooner :) &nbsp; There is a lot of work to build one, but it is not rocket science. I decided to get some feedback and make improvements, especially making the build easier, before taking orders. We will also release a free how-to STEM focused PDF that covers detailed steps to design and build your own. The Hover Us design and material kits will also be available.</p>
+</div>
+</div>
+<div class=menuContent id=faq>
+<h1 class="cHeading fontK">FAQs</h1>
+<div class="c1 f0">Q: Will it work on water?<br>
+<div class="fontK f0">A: Unknown and you should not try it. It might be as buoyant as 2 body boards with 20 pounds (9Kg) on top, but hard to balance.</div></div>
+<div class="c1 f0">Q: What will it work on?<br>
+<div class="fontK f0">A: On smoother surfaces it works great. On typical street, sidewalk, and other hard surfaces it does well. Offroad testing is pending.</div></div>
+<div class="c1 f0">Q: What is the range?<br>
+<div class="fontK f0">A: It's not designed for transportation, just to have fun. It will run about 10 minutes on a charge.</div></div>
+<div class="c1 f0">Q: When does KickStarter launch? How can I find out more?<br>
+<div class="fontK f0">A: Unfortunately this has been more difficult than I thought possible. I will make the design open and free. Follow Hover Us and check back.</div></div>
+<div class="c1 f0">Q: How about multiple leaf blowers?<br>
+<div class="fontK f0">A: Using 2 means both pressure and flow with the Glove bag.</div></div>
+</div>
+</div>
+<footer class=menuContent id=contact>
+<h1 class="cHeading fontK">Contact Us</h1>
+<div class=c1>
+Get updates <input type=text placeholder="your name" maxlength=50 required oninput=clean(this) id=firstname onchange=signupcheck()>, not more spam <input type=email placeholder=email maxlength=254 size=30 required id=email onchange=signupcheck()>
+<button id=signUpButton disabled onclick=signup() class=v>Sign up</button>
+<div id=recaptcha class=g-recaptcha style=display:none data-callback=signupcheck data-sitekey=6LdDLmYUAAAAACVf1WZTWpwtersH-59eRqZSvuHf></div>
+<div id=update></div>
+</div>
+<div class="c1 f3">
+<div class=t><a href=docs/privacy>Privacy</a><a href=docs/terms>Terms</a></div>
+<div class=t>em&#x61;il &#x75;s&#x40;h&#x6f;ver.&#x75;s</div>
+<div class=t>&copy; Hover Us</div>
+<div style=font-size:0.7em class=u>Hosted by <a href=http://www.mochahost.com/8691.html><b>Mocha</b></a></div>
+</div>
+<div class=c1>
+<div style=position:relative class=social><img src=img/social.png style=width:100%;vertical-align:bottom;background-size:contain>
+<a target=_blank href=https://www.facebook.com/hoverus/ style=left:0;border-radius:50% title=Facebook></a>
+<a target=_blank href=https://www.youtube.com/channel/UC291V6I1LeMtrPWFivo0lEA style=left:25% title=Youtube></a>
+<a target=_blank href=https://www.instagram.com/hover.us style=left:50%;border-radius:28% title=Instagram></a>
+<a target=_blank href=https://github.com/Hover-Us/ style=left:75%;border-radius:50% title=Github></a>
+</div>
+</div>
+</footer>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","GA_TRACKING_ID");</script>
+</body>
+</html>
